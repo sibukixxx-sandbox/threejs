@@ -213,10 +213,28 @@ ControlPanel.tsxに、以下のコントロールを追加してください:
 - **React Three Fiber**: ReactでThree.jsを使うためのレンダラー
 - **@react-three/drei**: 便利なヘルパー（OrbitControlsなど）
 - **Zustand**: 軽量ステート管理
-- **Leva**: GUIコントロールパネル
+- **Leva**: React統合GUIコントロールパネル（本番アプリ向け）
+- **lil-gui**: 軽量GUIライブラリ（プロトタイピング向け）
 - **TypeScript**: 型安全性
 - **Vite**: 高速ビルドツール
 - **vite-plugin-glsl**: GLSLシェーダーのインポート
+
+### UI ライブラリの使い分け
+
+このプロジェクトでは、2つのGUIライブラリを提供しています：
+
+| | Leva | lil-gui |
+|---|---|---|
+| **用途** | 本番アプリ、React統合 | プロトタイピング、クライアント確認 |
+| **セットアップ** | Zustand + React hooks | 数行で完了 |
+| **デザイン** | モダンでカスタマイズ可能 | 開発者向けシンプルUI |
+| **React** | 必須 | 不要 |
+
+**推奨ワークフロー**:
+1. **プロトタイプ段階**: lil-gui でパラメータと機能を決定
+2. **本番アプリ化**: Leva または カスタムUIに置き換え
+
+詳細は [docs/LIL_GUI_GUIDE.md](docs/LIL_GUI_GUIDE.md) を参照してください。
 
 ## 🚢 Vanning Simulator の使い方
 
