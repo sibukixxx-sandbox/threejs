@@ -3,7 +3,7 @@ import { create } from 'zustand'
 /**
  * シーンタイプ
  */
-export type SceneType = 'subsurface' | 'vanning'
+export type SceneType = 'subsurface' | 'vanning' | 'glitter'
 
 /**
  * App Store State
@@ -15,6 +15,6 @@ interface AppState {
 }
 
 export const useAppStore = create<AppState>((set) => ({
-  currentScene: 'vanning', // デフォルトはVanning Simulator
+  currentScene: 'glitter', // デフォルトはGlitter Demo
   setCurrentScene: (scene) => set({ currentScene: scene })
 }))
