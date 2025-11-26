@@ -1,0 +1,18 @@
+/* App.css - グローバルスタイル */
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+/* Levaパネルのスタイル調整 */
+.leva-c-kWgxhW {
+  z-index: 1000;
+}
+
+/* 警告メッセージのスタイル */
+.leva-c-kWgxhW [class*="warning"] input {
+  color: #ff6b6b !important;
+  font-weight: 500;
+}
