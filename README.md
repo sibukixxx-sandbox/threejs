@@ -1,10 +1,20 @@
 # Three.js Gemini Automation
 
-Geminiを使ってThree.jsシーンを量産するための包括的なプロジェクトテンプレート。美容系製品のビジュアライゼーションに特化。
+Geminiを使ってThree.jsシーンを量産するための包括的なプロジェクトテンプレート。
+
+**2つのデモシーンを提供**:
+1. **Subsurface Scattering Demo** - 美容系製品のビジュアライゼーション
+2. **Vanning Simulator** - コンテナ積載最適化シミュレーター
 
 ## 🎯 プロジェクトの目的
 
-このプロジェクトは、**Gemini AIを活用してThree.jsシーンを効率的に量産する**ための戦略を実装したものです。特に美容系製品（スキンケア、コスメ、ボディケアなど）のビジュアライゼーションに最適化されています。
+このプロジェクトは、**Gemini AIを活用してThree.jsシーンを効率的に量産する**ための戦略を実装したものです。
+
+### デモシーン1: Subsurface Scattering
+美容系製品（スキンケア、コスメ、ボディケアなど）のビジュアライゼーションに特化。肌や半透明素材の質感を表現するカスタムシェーダーを実装。
+
+### デモシーン2: Vanning Simulator
+貿易実務におけるコンテナ積載の最適化をリアルタイムで可視化。複数のアルゴリズム（Simple Stacking、Pallet Loading、Optimized Packing）で積載方法を比較できます。
 
 ## 🚀 Geminiを使った量産戦略
 
@@ -67,19 +77,27 @@ threejs/
 │   │   ├── subsurface.frag # Fragment Shader
 │   │   └── SubsurfaceMaterial.ts  # ShaderMaterialラッパー
 │   ├── components/         # React Three Fiberコンポーネント
-│   │   ├── Scene.tsx       # メインシーン
+│   │   ├── Scene.tsx       # Subsurfaceシーン
+│   │   ├── VanningScene.tsx # Vanningシーン
 │   │   ├── SubsurfaceSphere.tsx  # サブサーフェスオブジェクト
+│   │   ├── VanningSimulatorComponent.tsx  # Vanningコンポーネント
 │   │   └── StudioLights.tsx  # 照明コンポーネント
 │   ├── ui/                 # UIコンポーネント
-│   │   └── ControlPanel.tsx  # Levaコントロールパネル
+│   │   ├── ControlPanel.tsx  # Subsurface用パネル
+│   │   └── VanningControlPanel.tsx  # Vanning用パネル
 │   ├── store/              # ステート管理
-│   │   └── sceneStore.ts   # Zustandストア
+│   │   ├── appStore.ts     # アプリケーション全体のストア
+│   │   ├── sceneStore.ts   # Subsurface用ストア
+│   │   └── vanningStore.ts # Vanning用ストア
 │   ├── utils/              # ユーティリティ
+│   │   ├── VanningSimulator.ts  # Vanningシミュレーター本体
+│   │   └── loadingStrategies.ts # 積載アルゴリズム
 │   ├── App.tsx             # メインアプリケーション
 │   └── main.tsx            # エントリーポイント
 ├── docs/                   # ドキュメント
 │   ├── ARCHITECTURE.md     # アーキテクチャ
-│   └── GEMINI_WORKFLOW.md  # Geminiワークフロー
+│   ├── GEMINI_WORKFLOW.md  # Geminiワークフロー
+│   └── VANNING_SIMULATOR.md # Vanningシミュレーターガイド
 ├── public/                 # 静的ファイル
 ├── package.json
 ├── tsconfig.json
@@ -195,6 +213,44 @@ ControlPanel.tsxに、以下のコントロールを追加してください:
 - **TypeScript**: 型安全性
 - **Vite**: 高速ビルドツール
 - **vite-plugin-glsl**: GLSLシェーダーのインポート
+
+## 🚢 Vanning Simulator の使い方
+
+Vanning Simulator（バンニング・シミュレーター）は、コンテナに貨物を積載する際の最適化をリアルタイムで可視化するツールです。
+
+### 基本的な使い方
+
+1. **シーン選択パネルで「Vanning Simulator」を選択**
+
+2. **コンテナを選択**
+   - プリセット: 20ft、40ft、40ft High Cube、カスタム
+   - 手動設定: 幅・高さ・奥行きをスライダーで調整
+
+3. **貨物を設定**
+   - プリセット: 小型、中型、大型、カスタム
+   - 手動設定: 寸法と隙間を調整
+
+4. **アルゴリズムを選択**
+   - **Simple Stacking**: 高速だが利用率は低め
+   - **Pallet Loading**: 実務に近い積載方法
+   - **Optimized Packing**: 最も効率的（貨物を回転させて試行）
+
+5. **統計情報を確認**
+   - 積載数、容積利用率、重心位置
+   - 警告メッセージがあれば対応
+
+### 実務での活用例
+
+**見積もり**: 「このサイズの製品を1000個輸送したい」
+→ コンテナ数を計算
+
+**最適化**: 容積利用率を上げてコストを削減
+→ アルゴリズムや貨物サイズを調整
+
+**安全性**: 重量物の転倒リスクを確認
+→ 重心位置をチェック
+
+詳細は [docs/VANNING_SIMULATOR.md](docs/VANNING_SIMULATOR.md) を参照してください。
 
 ## 🎓 学習リソース
 
