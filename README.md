@@ -2,18 +2,22 @@
 
 Geminiを使ってThree.jsシーンを量産するための包括的なプロジェクトテンプレート。
 
-**2つのデモシーンを提供**:
-1. **Subsurface Scattering Demo** - 美容系製品のビジュアライゼーション
-2. **Vanning Simulator** - コンテナ積載最適化シミュレーター
+**3つのデモシーンを提供**:
+1. **Glitter Demo** ✨ - 化粧品のラメ・パール感シミュレーター
+2. **Subsurface Scattering Demo** - 美容系製品のマテリアル
+3. **Vanning Simulator** 🚢 - コンテナ積載最適化シミュレーター
 
 ## 🎯 プロジェクトの目的
 
 このプロジェクトは、**Gemini AIを活用してThree.jsシーンを効率的に量産する**ための戦略を実装したものです。
 
-### デモシーン1: Subsurface Scattering
+### デモシーン1: Glitter Material ✨
+化粧品・美容分野で需要の高い**「きらめき（ラメ・パール感）」**を表現するカスタムシェーダー。画像では伝わらない「視点を動かしたときのキラキラ感」をGLSLで実現。口紅、アイシャドウ、ネイルなどのバーチャル試着やECサイトに最適。
+
+### デモシーン2: Subsurface Scattering
 美容系製品（スキンケア、コスメ、ボディケアなど）のビジュアライゼーションに特化。肌や半透明素材の質感を表現するカスタムシェーダーを実装。
 
-### デモシーン2: Vanning Simulator
+### デモシーン3: Vanning Simulator 🚢
 貿易実務におけるコンテナ積載の最適化をリアルタイムで可視化。複数のアルゴリズム（Simple Stacking、Pallet Loading、Optimized Packing）で積載方法を比較できます。
 
 ## 🚀 Geminiを使った量産戦略
