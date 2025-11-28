@@ -3,7 +3,7 @@ import { create } from 'zustand'
 /**
  * シーンタイプ
  */
-export type SceneType = 'subsurface' | 'vanning' | 'glitter' | 'champagne'
+export type SceneType = 'subsurface' | 'vanning' | 'glitter' | 'champagne' | 'floor'
 
 /**
  * App Store State
@@ -15,6 +15,6 @@ interface AppState {
 }
 
 export const useAppStore = create<AppState>((set) => ({
-  currentScene: 'champagne', // デフォルトはChampagne Tower Demo
+  currentScene: 'floor', // デフォルトはFloor Manager Demo
   setCurrentScene: (scene) => set({ currentScene: scene })
 }))
