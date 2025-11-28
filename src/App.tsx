@@ -34,48 +34,36 @@ function App() {
       {/* Modern Scene Selector UI */}
       <StyledSceneSelector />
 
-      {/* UI Layer Wrapper */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          pointerEvents: 'none',
-          zIndex: 10,
-        }}
-      >
-        {currentScene === 'floor' ? (
-          <>
-            <FloorManagerScene />
-            <FloorManagerHUD />
-            <FloorManagerControlPanel />
-          </>
-        ) : currentScene === 'champagne' ? (
-          <>
-            <ChampagneTowerScene />
-            <ChampagneTowerHUD />
-            <ChampagneTowerControlPanel />
-          </>
-        ) : currentScene === 'glitter' ? (
-          <>
-            <GlitterScene />
-            <GlitterControlPanel />
-          </>
-        ) : currentScene === 'subsurface' ? (
-          <>
-            <Scene />
-            <ControlPanel />
-          </>
-        ) : (
-          <>
-            <VanningScene />
-            <VanningSimulatorHUD />
-            <VanningControlPanel />
-          </>
-        )}
-      </div>
+      {/* Render current scene */}
+      {currentScene === 'floor' ? (
+        <>
+          <FloorManagerScene />
+          <FloorManagerHUD />
+          <FloorManagerControlPanel />
+        </>
+      ) : currentScene === 'champagne' ? (
+        <>
+          <ChampagneTowerScene />
+          <ChampagneTowerHUD />
+          <ChampagneTowerControlPanel />
+        </>
+      ) : currentScene === 'glitter' ? (
+        <>
+          <GlitterScene />
+          <GlitterControlPanel />
+        </>
+      ) : currentScene === 'subsurface' ? (
+        <>
+          <Scene />
+          <ControlPanel />
+        </>
+      ) : (
+        <>
+          <VanningScene />
+          <VanningSimulatorHUD />
+          <VanningControlPanel />
+        </>
+      )}
     </>
   )
 }
