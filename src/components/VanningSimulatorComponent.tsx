@@ -19,7 +19,6 @@ export function VanningSimulatorComponent() {
   const algorithm = useVanningStore((state) => state.algorithm)
   const setLoadingStats = useVanningStore((state) => state.setLoadingStats)
   const cargoColor = useVanningStore((state) => state.cargoColor)
-  const containerColor = useVanningStore((state) => state.containerColor)
 
   // 初期化
   useEffect(() => {

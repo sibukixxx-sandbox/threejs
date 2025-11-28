@@ -1,5 +1,4 @@
 import { create } from 'zustand'
-import * as THREE from 'three'
 
 /**
  * Scene State Store

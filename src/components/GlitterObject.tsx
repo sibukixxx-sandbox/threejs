@@ -51,7 +51,7 @@ export function GlitterObject() {
   }, [objectType])
 
   // アニメーション
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += delta * rotationSpeed
       meshRef.current.rotation.x += delta * rotationSpeed * 0.5

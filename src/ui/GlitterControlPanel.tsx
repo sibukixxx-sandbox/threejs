@@ -1,5 +1,5 @@
-import { useControls, button, folder } from 'leva'
-import { useGlitterStore, COSMETIC_PRESETS, CosmeticPresetKey } from '@/store/glitterStore'
+import { useControls, folder } from 'leva'
+import { useGlitterStore, CosmeticPresetKey } from '@/store/glitterStore'
 
 /**
  * Glitter Control Panel Component

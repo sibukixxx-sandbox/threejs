@@ -1,5 +1,4 @@
 import GUI from 'lil-gui'
-import * as THREE from 'three'
 import { GlitterMaterial } from '@/shaders/GlitterMaterial'
 
 /**

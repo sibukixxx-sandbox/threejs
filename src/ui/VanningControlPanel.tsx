@@ -1,5 +1,5 @@
-import { useControls, button, folder } from 'leva'
-import { useVanningStore, CONTAINER_PRESETS, CARGO_PRESETS, ContainerPresetKey, CargoPresetKey, AlgorithmType } from '@/store/vanningStore'
+import { useControls, folder } from 'leva'
+import { useVanningStore, ContainerPresetKey, CargoPresetKey, AlgorithmType } from '@/store/vanningStore'
 
 /**
  * Vanning Control Panel Component

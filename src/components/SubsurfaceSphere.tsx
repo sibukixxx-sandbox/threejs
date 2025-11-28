@@ -49,7 +49,7 @@ export function SubsurfaceSphere() {
   }, [material, shaderMaterial])
 
   // アニメーション
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += delta * rotationSpeed
     }

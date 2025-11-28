@@ -54,7 +54,7 @@ export class BaseScene {
     })
     this.renderer.setSize(container.clientWidth, container.clientHeight)
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-    this.renderer.toneMapping = rendererConfig.toneMapping
+    this.renderer.toneMapping = rendererConfig.toneMapping as THREE.ToneMapping
     this.renderer.toneMappingExposure = rendererConfig.toneMappingExposure
     this.renderer.shadowMap.enabled = true
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
