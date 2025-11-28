@@ -1,18 +1,92 @@
 /* App.css - グローバルスタイル */
 
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
 #root {
   width: 100vw;
   height: 100vh;
   position: relative;
+  overflow: hidden;
+}
+
+/* Smooth Transitions */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* Levaパネルのスタイル調整 */
-.leva-c-kWgxhW {
-  z-index: 1000;
+.leva-c-kWgxhW,
+.leva__root {
+  z-index: 1000 !important;
+  font-family: inherit !important;
+}
+
+/* Leva Panel Modern Styling */
+.leva-c-kWgxhW > div {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 40, 0.95) 100%) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* 警告メッセージのスタイル */
 .leva-c-kWgxhW [class*="warning"] input {
   color: #ff6b6b !important;
   font-weight: 500;
+}
+
+/* Selection Style */
+::selection {
+  background: rgba(74, 144, 226, 0.3);
+  color: #fff;
+}
+
+/* Focus Outline */
+button:focus,
+input:focus,
+select:focus {
+  outline: 2px solid rgba(74, 144, 226, 0.5);
+  outline-offset: 2px;
+}
+
+/* Disabled State */
+button:disabled,
+input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed !important;
 }
