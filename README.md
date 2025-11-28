@@ -2,22 +2,26 @@
 
 Geminiを使ってThree.jsシーンを量産するための包括的なプロジェクトテンプレート。
 
-**3つのデモシーンを提供**:
-1. **Glitter Demo** ✨ - 化粧品のラメ・パール感シミュレーター
-2. **Subsurface Scattering Demo** - 美容系製品のマテリアル
-3. **Vanning Simulator** 🚢 - コンテナ積載最適化シミュレーター
+**4つのデモシーンを提供**:
+1. **Champagne Tower** 🍾 - シャンパンタワーシミュレーター
+2. **Glitter Demo** ✨ - 化粧品のラメ・パール感シミュレーター
+3. **Subsurface Scattering Demo** - 美容系製品のマテリアル
+4. **Vanning Simulator** 🚢 - コンテナ積載最適化シミュレーター
 
 ## 🎯 プロジェクトの目的
 
 このプロジェクトは、**Gemini AIを活用してThree.jsシーンを効率的に量産する**ための戦略を実装したものです。
 
-### デモシーン1: Glitter Material ✨
+### デモシーン1: Champagne Tower 🍾
+イベント・ウェディング・パーティーで使用されるシャンパンタワーを3Dで可視化。MeshPhysicalMaterialを活用したリアルなガラス表現と、段数・マテリアルパラメータの動的制御が可能。4つのプリセット（Classic Gold、Rose Pink、Champagne Beige、Crystal Clear）で様々な演出をシミュレーション。
+
+### デモシーン2: Glitter Material ✨
 化粧品・美容分野で需要の高い**「きらめき（ラメ・パール感）」**を表現するカスタムシェーダー。画像では伝わらない「視点を動かしたときのキラキラ感」をGLSLで実現。口紅、アイシャドウ、ネイルなどのバーチャル試着やECサイトに最適。
 
-### デモシーン2: Subsurface Scattering
+### デモシーン3: Subsurface Scattering
 美容系製品（スキンケア、コスメ、ボディケアなど）のビジュアライゼーションに特化。肌や半透明素材の質感を表現するカスタムシェーダーを実装。
 
-### デモシーン3: Vanning Simulator 🚢
+### デモシーン4: Vanning Simulator 🚢
 貿易実務におけるコンテナ積載の最適化をリアルタイムで可視化。複数のアルゴリズム（Simple Stacking、Pallet Loading、Optimized Packing）で積載方法を比較できます。
 
 ## 🚀 Geminiを使った量産戦略
@@ -273,6 +277,45 @@ Vanning Simulator（バンニング・シミュレーター）は、コンテナ
 → 重心位置をチェック
 
 詳細は [docs/VANNING_SIMULATOR.md](docs/VANNING_SIMULATOR.md) を参照してください。
+
+## 🍾 Champagne Tower の使い方
+
+Champagne Tower（シャンパンタワー）は、イベントやパーティーでの演出を3Dで可視化し、事前にシミュレーションできるツールです。
+
+### 基本的な使い方
+
+1. **シーン選択パネルで「Champagne Tower」を選択**
+
+2. **タワーの構造を設定**
+   - **Levels**: タワーの段数（1〜10段）
+   - **Glass Size**: 各グラスのサイズ
+   - **Spacing**: グラス間の間隔
+
+3. **マテリアルを調整**
+   - **Liquid Color**: シャンパンの色
+   - **Transmission**: ガラスの透過率
+   - **Clearcoat**: ガラスの光沢感
+
+4. **プリセットを試す**
+   - **Classic Gold**: 伝統的なゴールドシャンパン
+   - **Rose Pink**: ロゼワイン向けピンク
+   - **Champagne Beige**: 自然なシャンパンベージュ
+   - **Crystal Clear**: 空グラスやクリスタル表現
+
+5. **ライティングを調整**
+   - 2つのポイントライト（メイン＋アクセント）で演出を変更
+   - 会場の照明条件をシミュレーション
+
+### 実務での活用例
+
+**イベント企画**: 「5段タワーに必要なグラス数は？」
+→ Statistics で総グラス数を確認（5段 = 55個）
+
+**会場シミュレーション**: 照明の色と強度を調整して、実際の会場に近い見た目を確認
+
+**提案資料作成**: プリセットを切り替えて、クライアントに複数パターンを提示
+
+詳細は [docs/CHAMPAGNE_TOWER.md](docs/CHAMPAGNE_TOWER.md) を参照してください。
 
 ## 🎓 学習リソース
 
