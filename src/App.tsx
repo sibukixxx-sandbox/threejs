@@ -7,6 +7,8 @@ import { GlitterScene } from './components/GlitterScene'
 import { GlitterControlPanel } from './ui/GlitterControlPanel'
 import { ChampagneTowerScene } from './components/ChampagneTowerScene'
 import { ChampagneTowerControlPanel } from './components/ChampagneTowerControlPanel'
+import { FloorManagerScene } from './components/FloorManagerScene'
+import { FloorManagerControlPanel } from './components/FloorManagerControlPanel'
 import { useAppStore } from './store/appStore'
 import './App.css'
 
@@ -14,17 +16,19 @@ import './App.css'
  * Main Application
  * Geminiを使った量産戦略のデモアプリケーション
  *
- * 4つのデモシーンを提供:
- * 1. Champagne Tower - シャンパンタワーシミュレーター
- * 2. Glitter Demo - 化粧品のラメ・パール感シミュレーター
- * 3. Subsurface Scattering Demo - 美容系製品のマテリアル
- * 4. Vanning Simulator - コンテナ積載シミュレーター
+ * 5つのデモシーンを提供:
+ * 1. Floor Manager - ナイトクラブ/キャバクラの卓管理3Dマップ
+ * 2. Champagne Tower - シャンパンタワーシミュレーター
+ * 3. Glitter Demo - 化粧品のラメ・パール感シミュレーター
+ * 4. Subsurface Scattering Demo - 美容系製品のマテリアル
+ * 5. Vanning Simulator - コンテナ積載シミュレーター
  */
 function App() {
   const { currentScene, setCurrentScene } = useAppStore()
 
   // シーン切り替えコントロール
   useControls('シーン選択', {
+    'Floor Manager': button(() => setCurrentScene('floor')),
     'Champagne Tower': button(() => setCurrentScene('champagne')),
     'Glitter Demo': button(() => setCurrentScene('glitter')),
     'Subsurface Demo': button(() => setCurrentScene('subsurface')),
@@ -33,7 +37,12 @@ function App() {
 
   return (
     <>
-      {currentScene === 'champagne' ? (
+      {currentScene === 'floor' ? (
+        <>
+          <FloorManagerScene />
+          <FloorManagerControlPanel />
+        </>
+      ) : currentScene === 'champagne' ? (
         <>
           <ChampagneTowerScene />
           <ChampagneTowerControlPanel />
